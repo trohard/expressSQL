@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-    var Lead = sequelize.define('Lead', {
+    var Leads = sequelize.define('Leads', {
         id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
@@ -13,5 +13,5 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    return Lead;
+    return Leads;
 }
