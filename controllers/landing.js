@@ -14,7 +14,17 @@ exports.submit_lead = function(req, res, next) {
 }
 
 exports.show_leads = function(req, res, next) {
-    models.Leads.findAll().then(leads => {
+    return models.Leads.findAll().then(leads => {
         res.render('landing', { title: 'Express', leads: leads });
     })   
+}
+
+exports.show_lead = function(req, res, next) {
+    return models.Leads.findOne({
+        where : {
+            id : req.params.lead_id
+        }
+    }).then(lead => {
+        res.render('lead', { lead : lead });
+    })
 }
